@@ -6,13 +6,13 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 15:12:15 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:18:15 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	keyboard_w_s(complete *game, int movement) //player move up and down
+static int	keyboard_w_s(t_complete *game, int movement) //player move up and down
 {
 	int	i;
 	int j;
@@ -44,7 +44,7 @@ static int	keyboard_w_s(complete *game, int movement) //player move up and down
 	return (1);
 }
 
-static int	keyboard_a_d(complete *game, int movement) //player move left and right
+static int	keyboard_a_d(t_complete *game, int movement) //player move left and right
 {
 	int	i;
 	int j;
@@ -76,7 +76,7 @@ static int	keyboard_a_d(complete *game, int movement) //player move left and rig
 	return (1);
 }
 
-static int	right_move(complete *game, int i, int j)
+static int	right_move(t_complete *game, int i, int j)
 {
 	if (game->map[j][i] == 'E')
 	{
@@ -103,7 +103,7 @@ static int	right_move(complete *game, int i, int j)
 	return (1);
 }
 
-int	controls_working(int command, complete *game)
+int	controls_working(int command, t_complete *game)
 {
 	int	works;
 

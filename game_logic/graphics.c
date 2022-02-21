@@ -6,11 +6,11 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 17:37:10 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:19:39 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	place_player(complete *game, int height, int width)
+void	place_player(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 			aame->winnerpointer, game->player, width * 40, height * 40);
@@ -18,14 +18,14 @@ void	place_player(complete *game, int height, int width)
 	game->playersecond = width;
 }
 
-void	place_collectable(complete *game, int height, int width)
+void	place_collectable(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 			game->winnerpointer, game->collectable, width *40, height *40);
 	game->collectables++;
 }
 
-void	place_images_in_game(complete *game)
+void	place_images_in_game(t_complete *game)
 {
 	int	i;
 	int	j;
@@ -37,7 +37,7 @@ void	place_images_in_game(complete *game)
 	game->collectable =
 }
 
-void	adding_in_graphics(complete *game)
+void	adding_in_graphics(t_complete *game)
 {
 	int	height;
 	int	width;

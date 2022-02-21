@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:49:02 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 17:19:38 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:20:31 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	*ft_memset(void *b, int c, size_t length)
 	return (b);
 }
 
-int	exit_point(complete *game)
+int	exit_point(t_complete *game)
 {
 	int	line;
 
@@ -38,7 +38,7 @@ int	exit_point(complete *game)
 
 int	main(int argc, char **argv)
 {
-	complete game;
+	t_complete game;
 
 	if (argc != 2)
 		return (0);

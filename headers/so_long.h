@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/21 20:15:54 by prossi            #+#    #+#             */
+/*   Updated: 2022/02/21 20:16:59 by prossi           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -8,7 +20,7 @@
 # include "get_next_line.h"
 # include "../minilibx/mlx.h"
 
-typedef struct start
+typedef struct t_start
 {
 	int		fd;
 	int		heightmap;
@@ -31,7 +43,7 @@ typedef struct start
 	void	*mlxpointer;
 	void	*winpointer;
 
-}	complete;
+}	t_complete;
 
 int		exit_game(complete *game);
 int		map_reading(complete *game);

@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 17:36:05 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:20:02 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static	width_of_map(char *string)
 	return(width);
 }
 
-static	add_line(complete *game, char *line)
+static	add_line(t_complete *game, char *line)
 {
 	char	**temporary:
 	int		i;
@@ -47,7 +47,7 @@ static	add_line(complete *game, char *line)
 	return (1);
 }
 
-int	map_reading(complete *game, char *argv)
+int	map_reading(t_complete *game, char *argv)
 {
 	char	*readmap;
 

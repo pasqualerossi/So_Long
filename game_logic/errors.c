@@ -6,13 +6,13 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 15:11:21 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 20:19:07 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	horizontalwall(complete *game)
+static int	horizontalwall(t_complete *game)
 {
 	int	i;
 	int	j;
@@ -29,7 +29,7 @@ static int	horizontalwall(complete *game)
 	return (1);
 }
 
-static int	verticalwall(complete *game)
+static int	verticalwall(t_complete *game)
 {
 	int	height;
 	int	width;
@@ -45,7 +45,7 @@ static int	verticalwall(complete *game)
 	return (1);
 }
 
-static int	if_walls(complete *game)
+static int	if_walls(t_complete *game)
 {
 	int	verticalwalls;
 	int	horizontalwalls;
@@ -58,7 +58,7 @@ static int	if_walls(complete *game)
 	   exit_game(game);
 	}
 
-static void	count_checker(complete *game, int height, int width)
+static void	count_checker(t_complete *game, int height, int width)
 {
 	if (game->map[height][width] != '1' &&
 		game->map[height][width] != '0' &&
@@ -79,7 +79,7 @@ static void	count_checker(complete *game, int height, int width)
 			game->exitcount++;
 }
 
-void	character_valid(complete *game)
+void	character_valid(t_complete *game)
 {
 	int	height;
 	int	width;
@@ -102,7 +102,7 @@ void	character_valid(complete *game)
 	}
 }
 
-void	check_errors(complete *game)
+void	check_errors(t_complete *game)
 {
 	if_walls(game);
 	character_valid(game);
