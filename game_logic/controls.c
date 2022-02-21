@@ -6,13 +6,13 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/18 19:23:48 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/21 15:12:15 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-//player move up and down
-static int	keyboard_w_s(complete *game, int movement)
+
+static int	keyboard_w_s(complete *game, int movement) //player move up and down
 {
 	int	i;
 	int j;
@@ -43,8 +43,8 @@ static int	keyboard_w_s(complete *game, int movement)
 	printf("Steps You Have Taken: %i\n Collectables Remaining: %i\n", game->counter, game->collectables);
 	return (1);
 }
-//player move left and right
-static int	keyboard_a_d(complete *game, int movement)
+
+static int	keyboard_a_d(complete *game, int movement) //player move left and right
 {
 	int	i;
 	int j;

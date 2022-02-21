@@ -19,17 +19,25 @@ typedef struct start
 	int		playerfirst;
 	int		playersecond;
 	int		counter;
+	int		collectables;
 
 	char	**map;
 
-	void	
+	void	*floor;
+	void	*barrier;
+	void	*player;
+	void	*exit;
+	void	*collectable;
+	void	*mlxpointer;
+	void	*winpointer;
 
 }	complete;
 
 int		exit_game(complete *game);
-void	check_errors(complete *game);
 int		map_reading(complete *game);
 int		controls_working(int command, complete *game);
-
+void	adding_in_graphics(complete *game);
+void	place_images_in_game(complete *game);
+void	check_errors(complete *game);
 
 #endif

@@ -1,1 +1,20 @@
-Makefile Here
+NAME := so_long
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -Iheaders/
+
+SOURCE := game_logic/*.c
+GETNEXTLINE := get_next_line/*c
+LIBRARY := -L minilibx -lmlx -framework OpenGL -framework AppKit
+MINILIBX := minilibx/
+
+all:
+	make -C $(MINILIBX)
+	$(CC) $(CFLAGS) $(SRC) $(GETNEXTLINE) $(LIBRARY) -o $(NAME)
+
+clean:
+
+fclean: clean
+		make clean -C $(MINILIBX)
+		rm -rf $(NAME)
+
+re: fclean all
