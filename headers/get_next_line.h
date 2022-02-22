@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:23:59 by prossi            #+#    #+#             */
-/*   Updated: 2021/10/19 12:03:44 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 18:58:50 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-//#include <stdlib.h> and <unistd.h> for *malloc(), free(), & read()*.
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_strlen(const char *str);

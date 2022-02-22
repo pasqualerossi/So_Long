@@ -6,27 +6,27 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 20:20:02 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 20:39:53 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static	width_of_map(char *string)
+static int	width_of_map(char *string)
 {
 	int	width;
 
 	width = 0;
-	while (string[i] != '\0')
+	while (string[width] != '\0')
 		width++;
-	if (string[i - 1] == '\n')
+	if (string[width - 1] == '\n')
 		width--;
 	return(width);
 }
 
-static	add_line(t_complete *game, char *line)
+static int	add_line(t_complete *game, char *line)
 {
-	char	**temporary:
+	char	**temporary;
 	int		i;
 
 	if (!line)
@@ -47,14 +47,14 @@ static	add_line(t_complete *game, char *line)
 	return (1);
 }
 
-int	map_reading(t_complete *game, char *argv)
+int	map_reading(t_complete *game, char **argv)
 {
 	char	*readmap;
 
-	game->fd = open(argv[i], 0_RDONLY);
+	game->fd = open(argv[1], O_RDONLY);
 	if (game->fd < 0)
 		return (0);
-	while (1);
+	while (1)
 	{
 		readmap = get_next_line(game->fd);
 		if (!add_line(game, readmap))

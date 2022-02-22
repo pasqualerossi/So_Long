@@ -6,9 +6,11 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:49:02 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 20:20:31 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 20:40:53 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "so_long.h"
 
 static void	*ft_memset(void *b, int c, size_t length)
 {
@@ -31,7 +33,7 @@ int	exit_point(t_complete *game)
 	mlx_destroy_window(game->mlxpointer, game->winpointer);
 	free(game->mlxpointer);
 	while (line < game->heightmap - 1)
-			free(game->map[line++]);
+		free(game->map[line++]);
 	free(game->map);
 	exit(0);
 }
@@ -42,7 +44,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		return (0);
-	ft_memset(&game, 0, sizeof(game));
+	ft_memset(&game, 0, sizeof(t_complete));
 	map_reading(&game, argv);
 	check_errors(&game);
 	game.mlxpointer = mlx_init();

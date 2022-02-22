@@ -1,6 +1,8 @@
 NAME := so_long
+
 CC := gcc
-CFLAGS := -Wall -Werror -Wextra -Iheaders/
+
+CFLAGS := -Wall -Wextra -Werror -Iheaders/
 
 SOURCE := game_logic/*.c
 GETNEXTLINE := get_next_line/*c
@@ -9,7 +11,7 @@ MINILIBX := minilibx/
 
 all:
 	make -C $(MINILIBX)
-	$(CC) $(CFLAGS) $(SRC) $(GETNEXTLINE) $(LIBRARY) -o $(NAME)
+	$(CC) $(CFLAGS) $(SOURCE) $(GETNEXTLINE) $(LIBRARY) -o $(NAME)
 
 clean:
 

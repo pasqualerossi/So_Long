@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 20:19:07 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 19:47:38 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static int	horizontalwall(t_complete *game)
 	while (j < i)
 	{
 		if (!(game->map[0][i] == '1'
-				&& game->map[game->heightmap - 1][j] == '1'))
-				return (0);
+			&& game->map[game->heightmap - 1][j] == '1'))
+			return (0);
 		j++;
 	}
 	return (1);
@@ -38,14 +38,15 @@ static int	verticalwall(t_complete *game)
 	width = game->widthmap;
 	while (height < game->heightmap)
 	{
-		if (!(game->map[height][0] == '1' && game->map[height][width - 1] == '1'));
-				return (0);
+		if (!(game->map[height][0] == '1' && game->map[height][width - 1] == '1'))
+			;
+		return (0);
 		height++;
 	}
 	return (1);
 }
 
-static int	if_walls(t_complete *game)
+static void	if_walls(t_complete *game)
 {
 	int	verticalwalls;
 	int	horizontalwalls;
@@ -54,9 +55,11 @@ static int	if_walls(t_complete *game)
 	horizontalwalls = horizontalwall(game);
 	if (!verticalwalls || !horizontalwalls)
 	{
-		printf("\e[31m\e[1mError\nThis map is missing the walls, so this map unacceptable \e[0m \n");
-	   exit_game(game);
+		printf("\e[31m\e[1mError\nThis map is missing the walls");
+		printf("so this map is unacceptable \e[0");
+		exit_game(game);
 	}
+}
 
 static void	count_checker(t_complete *game, int height, int width)
 {
@@ -67,8 +70,9 @@ static void	count_checker(t_complete *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		printf("\e[31m\e[1mError\nNo clue on the number of characters in the map! \e[0m \n");
-		printf("This isn't the right character" %c\n, game->map[height][width];
+		printf("\e[31m\e[1mError\nNo clue on the number of");
+		printf("characters in the map!,\e[0m\n");
+		printf("This isn't the right character %c\n", game->map[height][width]);
 		exit_game(game);
 	}
 	if (game->map[height][width] == 'C')
@@ -95,9 +99,11 @@ void	character_valid(t_complete *game)
 		}
 		height++;
 	}
-	if (!(game->playercount == 1 && game->columncount > 1 && game->exitcount ==1))
+	if (!(game->playercount == 1 && game->columncount > 1
+			&& game->exitcount == 1))
 	{
-		printf("\e[31m\e[1mError\n Something is wrong - only 1 player and 1 exit is allowed and collectables need to be more than 1! \e[0m \n");
+		printf("\e[31m\e[1mError\n Something is wrong,");
+		printf("either player, exit or collectable issue \e[0m \n");
 		exit_game(game);
 	}
 }

@@ -6,14 +6,16 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 20:19:39 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 19:50:50 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "so_long.h"
 
 void	place_player(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
-			aame->winnerpointer, game->player, width * 40, height * 40);
+		game->winpointer, game->player, width * 40, height * 40);
 	game->playerfirst = height;
 	game->playersecond = width;
 }
@@ -21,7 +23,7 @@ void	place_player(t_complete *game, int height, int width)
 void	place_collectable(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
-			game->winnerpointer, game->collectable, width *40, height *40);
+		game->winpointer, game->collectable, width * 40, height * 40);
 	game->collectables++;
 }
 
@@ -30,11 +32,16 @@ void	place_images_in_game(t_complete *game)
 	int	i;
 	int	j;
 
-	game->floor = 
-	game->barrier = 
-	game->player = 
-	game->exit = 
-	game->collectable =
+	game->floor = mlx_xpm_file_to_image(game->mlxpointer,
+			"game_images/background.xpm", &i, &j);
+	game->barrier = mlx_xpm_file_to_image(game->mlxpointer,
+			"game_images/bush.xpm", &i, &j);
+	game->player = mlx_xpm_file_to_image(game->mlxpointer,
+			"game_images/crate.xpm", &i, &j);
+	game->exit = mlx_xpm_file_to_image(game->mlxpointer,
+			"game_images/tombstone.xpm", &i, &j);
+	game->collectable = mlx_xpm_file_to_image(game->mlxpointer,
+			"game_images/skeleton.xpm", &i, &j);
 }
 
 void	adding_in_graphics(t_complete *game)
@@ -49,19 +56,19 @@ void	adding_in_graphics(t_complete *game)
 		width = 0;
 		while (game->map[height][width])
 		{
-			if (game->map[height][width] == '1';)
+			if (game->map[height][width] == '1')
 				mlx_put_image_to_window(game->mlxpointer,
-						game->winpointer, game->barrier, width * 40, height * 40);
+					game->winpointer, game->barrier, width * 40, height * 40);
 			if (game->map[height][width] == 'C')
 				place_collectable(game, height, width);
 			if (game->map[height][width] == 'P')
 				place_player(game, height, width);
 			if (game->map[height][width] == 'E')
 				mlx_put_image_to_window(game->mlxpointer,
-						game->winpointer, game->exit, width * 40, height * 40);
+					game->winpointer, game->exit, width * 40, height * 40);
 			if (game->map[height][width] == '0')
 				mlx_put_image_to_window(game->mlxpointer,
-						game->winpointer, game->floor, width * 40, height * 40);
+					game->winpointer, game->floor, width * 40, height * 40);
 			width++;
 		}
 		height++;

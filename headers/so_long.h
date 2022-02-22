@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 20:15:54 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/21 20:16:59 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 20:52:03 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <fcntl.h>
 # include <errno.h>
 # include <string.h>
@@ -45,11 +46,11 @@ typedef struct t_start
 
 }	t_complete;
 
-int		exit_game(complete *game);
-int		map_reading(complete *game);
-int		controls_working(int command, complete *game);
-void	adding_in_graphics(complete *game);
-void	place_images_in_game(complete *game);
-void	check_errors(complete *game);
+int		exit_game(t_complete *game);
+int		map_reading(t_complete *game, char **argv);
+int		controls_working(int command, t_complete *game);
+void	adding_in_graphics(t_complete *game);
+void	place_images_in_game(t_complete *game);
+void	check_errors(t_complete *game);
 
 #endif
