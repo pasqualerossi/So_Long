@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 20:15:54 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 20:52:03 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 21:50:55 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct t_start
 
 }	t_complete;
 
-int		exit_game(t_complete *game);
+int		exit_point(t_complete *game);
 int		map_reading(t_complete *game, char **argv);
 int		controls_working(int command, t_complete *game);
 void	adding_in_graphics(t_complete *game);

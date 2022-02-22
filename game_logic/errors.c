@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 19:47:38 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 21:52:02 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	if_walls(t_complete *game)
 	{
 		printf("\e[31m\e[1mError\nThis map is missing the walls");
 		printf("so this map is unacceptable \e[0");
-		exit_game(game);
+		exit_point(game);
 	}
 }
 
@@ -73,7 +73,7 @@ static void	count_checker(t_complete *game, int height, int width)
 		printf("\e[31m\e[1mError\nNo clue on the number of");
 		printf("characters in the map!,\e[0m\n");
 		printf("This isn't the right character %c\n", game->map[height][width]);
-		exit_game(game);
+		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')
 			game->columncount++;
@@ -104,7 +104,7 @@ void	character_valid(t_complete *game)
 	{
 		printf("\e[31m\e[1mError\n Something is wrong,");
 		printf("either player, exit or collectable issue \e[0m \n");
-		exit_game(game);
+		exit_point(game);
 	}
 }
 

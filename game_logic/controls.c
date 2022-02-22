@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 21:00:09 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/22 21:49:49 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static int	right_move(t_complete *game, int i, int j)
 		if (game->collectables != 0)
 			return (0);
 		printf("\e[31m\e[1m\nYou Have Won, Congrats! \e[0m \n");
-		exit_game(game);
+		exit_point(game);
 	}
 	if (game->map[j][i] == '0')
 	{
@@ -113,7 +113,7 @@ int	controls_working(int command, t_complete *game)
 	int	works;
 
 	if (command == 53)
-		free_exit(game);
+		exit_point(game);
 	if (command == 13)
 		works = keyboard_w_s(game, command);
 	if (command == 1)

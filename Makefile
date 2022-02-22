@@ -1,4 +1,4 @@
-NAME := so_long
+NAME := solong
 
 CC := gcc
 
@@ -6,7 +6,7 @@ CFLAGS := -Wall -Wextra -Werror -Iheaders/
 
 SOURCE := game_logic/*.c
 GETNEXTLINE := get_next_line/*c
-LIBRARY := -L minilibx -lmlx -framework OpenGL -framework AppKit
+LIBRARY := -Lminilibx -lmlx -framework OpenGL -framework AppKit
 MINILIBX := minilibx/
 
 all:
