@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:49:02 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 18:04:59 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 19:05:27 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	exit_point(t_complete *game)
 
 int	main(int argc, char **argv)
 {
-	t_complete game;
+	t_complete	game;
 
 	if (argc != 2)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 18:07:25 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 19:49:22 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ static void	if_walls(t_complete *game)
 	horizontalwalls = horizontalwall(game);
 	if (!verticalwalls || !horizontalwalls)
 	{
-		printf("Error 1\n");
-		//printf("\e[31m\e[1mError\nThis map is missing the walls, so this map is unacceptable \e[0m \n");
+		printf("\e[31m\e[1mError\nThis map is missing the walls\e[0m \n");
 		exit_point(game);
 	}
 }
@@ -68,7 +67,7 @@ static void	count_checker(t_complete *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		printf("\e[31m\e[1mError\nNo clue on the number of characters in the map!,\e[0m\n This isn't the right character %c\n", game->map[height][width]);
+		printf("\e[31m\e[1mError\nError Here!%c\n", game->map[height][width]);
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')

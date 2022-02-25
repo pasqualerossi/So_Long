@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 17:54:19 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 19:05:49 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	width_of_map(char *string)
 		width++;
 	if (string[width - 1] == '\n')
 		width--;
-	return(width);
+	return (width);
 }
 
 static int	add_line(t_complete *game, char *line)
