@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 21:52:02 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 18:07:25 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ static int	horizontalwall(t_complete *game)
 	j = 0;
 	while (j < i)
 	{
-		if (!(game->map[0][i] == '1'
-			&& game->map[game->heightmap - 1][j] == '1'))
+		if (game->map[0][i] == '1' && game->map[game->heightmap - 1][j] == '1')
 			return (0);
 		j++;
 	}
@@ -39,8 +38,7 @@ static int	verticalwall(t_complete *game)
 	while (height < game->heightmap)
 	{
 		if (!(game->map[height][0] == '1' && game->map[height][width - 1] == '1'))
-			;
-		return (0);
+			return (0);
 		height++;
 	}
 	return (1);
@@ -55,8 +53,8 @@ static void	if_walls(t_complete *game)
 	horizontalwalls = horizontalwall(game);
 	if (!verticalwalls || !horizontalwalls)
 	{
-		printf("\e[31m\e[1mError\nThis map is missing the walls");
-		printf("so this map is unacceptable \e[0");
+		printf("Error 1\n");
+		//printf("\e[31m\e[1mError\nThis map is missing the walls, so this map is unacceptable \e[0m \n");
 		exit_point(game);
 	}
 }
@@ -70,9 +68,7 @@ static void	count_checker(t_complete *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		printf("\e[31m\e[1mError\nNo clue on the number of");
-		printf("characters in the map!,\e[0m\n");
-		printf("This isn't the right character %c\n", game->map[height][width]);
+		printf("\e[31m\e[1mError\nNo clue on the number of characters in the map!,\e[0m\n This isn't the right character %c\n", game->map[height][width]);
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')

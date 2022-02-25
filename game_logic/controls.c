@@ -6,12 +6,11 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 21:49:49 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 18:56:56 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "mlx.h"
 
 static int	right_move(t_complete *game, int i, int j);
 
@@ -43,8 +42,7 @@ static int	keyboard_w_s(t_complete *game, int movement)
 			return (0);
 		game->map[j - 1][i] = '0';
 	}
-	printf("Steps Taken: %i\n", game->counter);
-	printf("Collectables Remaining: %i\n", game->collectables);
+	printf("Steps Taken: %i\n Collectables Left: %i\n", game->counter, game->collectables);
 	return (1);
 }
 
@@ -110,6 +108,7 @@ static int	right_move(t_complete *game, int i, int j)
 
 int	controls_working(int command, t_complete *game)
 {
+	printf("%i %i\n", game->playerfirst, game->playersecond);
 	int	works;
 
 	if (command == 53)

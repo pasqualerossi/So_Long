@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:49:02 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 20:40:53 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 18:04:59 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 static void	*ft_memset(void *b, int c, size_t length)
 {
-	char	*p;
+	unsigned char	*p;
 
-	p = (char *)b;
-	while (length > 0)
-	{
-		p[length - 1] = c;
-		length--;
-	}
+	p = (unsigned char *)b;
+	while (length--)
+		*p++ = (unsigned char)c;
 	return (b);
 }
 
@@ -30,7 +27,8 @@ int	exit_point(t_complete *game)
 	int	line;
 
 	line = 0;
-	mlx_destroy_window(game->mlxpointer, game->winpointer);
+	if (game->winpointer)
+		mlx_destroy_window(game->mlxpointer, game->winpointer);
 	free(game->mlxpointer);
 	while (line < game->heightmap - 1)
 		free(game->map[line++]);
@@ -49,7 +47,7 @@ int	main(int argc, char **argv)
 	check_errors(&game);
 	game.mlxpointer = mlx_init();
 	game.winpointer = mlx_new_window(game.mlxpointer, (game.widthmap * 40),
-			(game.heightmap * 40), "so_long");
+			(game.heightmap * 40), "solong");
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);

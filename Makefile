@@ -1,4 +1,4 @@
-NAME := solong
+NAME := so_long
 
 CC := gcc
 

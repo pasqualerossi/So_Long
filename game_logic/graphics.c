@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/* ***************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:44 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/22 19:50:50 by prossi           ###   ########.fr       */
+/*   Updated: 2022/02/25 18:35:17 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	place_player(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->player, width * 40, height * 40);
-	game->playerfirst = height;
-	game->playersecond = width;
+	game->playersecond = height;
+	game->playerfirst = width;
 }
 
 void	place_collectable(t_complete *game, int height, int width)
@@ -32,16 +32,11 @@ void	place_images_in_game(t_complete *game)
 	int	i;
 	int	j;
 
-	game->floor = mlx_xpm_file_to_image(game->mlxpointer,
-			"game_images/background.xpm", &i, &j);
-	game->barrier = mlx_xpm_file_to_image(game->mlxpointer,
-			"game_images/bush.xpm", &i, &j);
-	game->player = mlx_xpm_file_to_image(game->mlxpointer,
-			"game_images/crate.xpm", &i, &j);
-	game->exit = mlx_xpm_file_to_image(game->mlxpointer,
-			"game_images/tombstone.xpm", &i, &j);
-	game->collectable = mlx_xpm_file_to_image(game->mlxpointer,
-			"game_images/skeleton.xpm", &i, &j);
+	game->floor = mlx_xpm_file_to_image(game->mlxpointer, "game_images/floor.xpm", &i, &j);
+	game->barrier = mlx_xpm_file_to_image(game->mlxpointer, "game_images/wall.xpm", &i, &j);
+	game->player = mlx_xpm_file_to_image(game->mlxpointer, "game_images/player.xpm", &i, &j);
+	game->exit = mlx_xpm_file_to_image(game->mlxpointer, "game_images/exit.xpm", &i, &j);
+	game->collectable = mlx_xpm_file_to_image(game->mlxpointer, "game_images/item.xpm", &i, &j);
 }
 
 void	adding_in_graphics(t_complete *game)
