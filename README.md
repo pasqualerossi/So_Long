@@ -5,7 +5,7 @@
 
 ![Screen Recording 2022-03-04 at 5 04 34 PM](https://user-images.githubusercontent.com/58959408/156712665-5df19821-bedb-4ae0-933d-a7efc3f852fc.gif)
 
-# Play This Game
+# How To Play This Game
 
 To play this game, copy the following into the iTerm/Terminal
 
