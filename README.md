@@ -12,4 +12,6 @@ https://github.com/augustobecker/so_long_tester
 
 To play this game, copy the following into the iTerm/Terminal:
 
-```cd Desktop && git clone https://github.com/pasqualerossi/So_Long.git && cd So_Long && make && ./so_long game_maps/map1.ber```
+```
+cd Desktop && git clone https://github.com/pasqualerossi/So_Long.git && cd So_Long && make && ./so_long game_maps/map1.ber
+```
