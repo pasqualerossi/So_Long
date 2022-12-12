@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 20:15:54 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 14:41:05 by prossi           ###   ########.fr       */
+/*   Updated: 2022/12/12 20:41:55 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct t_start
 	int		playercount;
 	int		columncount;
 	int		exitcount;
-	int		playerfirst;
-	int		playersecond;
+	int		x_axis;
+	int		y_axis;
 	int		counter;
 	int		collectables;
 

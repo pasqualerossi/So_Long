@@ -3,16 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:34:24 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 19:17:31 by prossi           ###   ########.fr       */
+/*   Updated: 2022/12/12 20:44:37 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	right_move(t_complete *game, int i, int j);
+static int	right_move(t_complete *game, int i, int j)
+{
+	if (game->map[j][i] == 'E')
+	{
+		if (game->collectables != 0)
+			return (0);
+		printf("\nYou Have Won, Congrats!\n");
+		exit_point(game);
+	}
+	if (game->map[j][i] == '0')
+	{
+		game->map[j][i] = 'P';
+		game->x_axis = i;
+		game->y_axis = j;
+		game->counter++;
+	}
+	if (game->map[j][i] == 'C')
+	{
+		game->map[j][i] = 'P';
+		game->x_axis = i;
+		game->y_axis = j;
+		game->collectables--;
+		game->counter++;
+	}
+	return (1);
+}
 
 static int	keyboard_w_s(t_complete *game, int movement)
 {
@@ -20,8 +45,8 @@ static int	keyboard_w_s(t_complete *game, int movement)
 	int	j;
 	int	k;
 
-	i = game->playerfirst;
-	j = game->playersecond;
+	i = game->x_axis;
+	j = game->y_axis;
 	if (movement == 13)
 	{
 		j--;
@@ -53,8 +78,8 @@ static int	keyboard_a_d(t_complete *game, int movement)
 	int	j;
 	int	k;
 
-	i = game->playerfirst;
-	j = game->playersecond;
+	i = game->x_axis;
+	j = game->y_axis;
 	if (movement == 0)
 	{
 		i--;
@@ -77,33 +102,6 @@ static int	keyboard_a_d(t_complete *game, int movement)
 	}
 	printf("Steps Taken: %i\n", game->counter);
 	printf("Collectables Remaining: %i\n", game->collectables);
-	return (1);
-}
-
-static int	right_move(t_complete *game, int i, int j)
-{
-	if (game->map[j][i] == 'E')
-	{
-		if (game->collectables != 0)
-			return (0);
-		printf("\e[31m\e[1m\nYou Have Won, Congrats! \e[0m \n");
-		exit_point(game);
-	}
-	if (game->map[j][i] == '0')
-	{
-		game->map[j][i] = 'P';
-		game->playerfirst = i;
-		game->playersecond = j;
-		game->counter++;
-	}
-	if (game->map[j][i] == 'C')
-	{
-		game->map[j][i] = 'P';
-		game->playerfirst = i;
-		game->playersecond = j;
-		game->collectables--;
-		game->counter++;
-	}
 	return (1);
 }
 

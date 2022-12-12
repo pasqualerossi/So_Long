@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphics.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 19:06:51 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 19:55:55 by prossi           ###   ########.fr       */
+/*   Updated: 2022/12/12 20:41:53 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	place_player(t_complete *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->player, width * 40, height * 40);
-	game->playersecond = height;
-	game->playerfirst = width;
+	game->y_axis = height;
+	game->x_axis = width;
 }
 
 void	place_collectable(t_complete *game, int height, int width)

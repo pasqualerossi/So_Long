@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prossi <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42adel.org.au>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:33:01 by prossi            #+#    #+#             */
-/*   Updated: 2022/02/25 19:49:22 by prossi           ###   ########.fr       */
+/*   Updated: 2022/12/12 20:46:47 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	if_walls(t_complete *game)
 	horizontalwalls = horizontalwall(game);
 	if (!verticalwalls || !horizontalwalls)
 	{
-		printf("\e[31m\e[1mError\nThis map is missing the walls\e[0m \n");
+		printf("\nThis map is missing the walls\n");
 		exit_point(game);
 	}
 }
@@ -67,7 +67,7 @@ static void	count_checker(t_complete *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		printf("\e[31m\e[1mError\nError Here!%c\n", game->map[height][width]);
+		printf("\nError Here!%c\n", game->map[height][width]);
 		exit_point(game);
 	}
 	if (game->map[height][width] == 'C')
@@ -97,8 +97,8 @@ void	character_valid(t_complete *game)
 	if (!(game->playercount == 1 && game->columncount > 1
 			&& game->exitcount == 1))
 	{
-		printf("\e[31m\e[1mError\n Something is wrong,");
-		printf("either player, exit or collectable issue \e[0m \n");
+		printf("\nError\nSomething is wrong!\n");
+		printf("either player, exit or collectable issue\n");
 		exit_point(game);
 	}
 }
