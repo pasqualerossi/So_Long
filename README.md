@@ -6,6 +6,4 @@
 
 To play this game, copy the URL below into iTerm/Terminal:
 
-```
-git clone https://github.com/pasqualerossi/So_Long.git && cd So_Long && make && ./so_long game_maps/map1.ber
-```
+```git clone https://github.com/pasqualerossi/So_Long.git && cd So_Long && make && ./so_long game_maps/map1.ber```
