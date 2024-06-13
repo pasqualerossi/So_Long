@@ -5,6 +5,7 @@
 # Updates:
 
 2024: Updated game logic to met current requirements, now includes checks for valid map path.
+
 2022/12/12: Initial commit.
 
 # How To Play This Game
